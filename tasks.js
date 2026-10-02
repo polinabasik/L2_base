@@ -67,6 +67,20 @@ function whatCentury(year) {
 }
 
 
+function findMissing(list) {
+    let first = list[0];
+    let last = list[list.length - 1];
+    
+    let step = (last - first) / list.length;
+
+    for (let i = 0; i < list.length - 1; i++) {
+        if (list[i + 1] !== list[i] + step) {
+            return list[i] + step;
+        }
+    }
+    
+    return first;
+}
 
 
 
