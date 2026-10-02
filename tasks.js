@@ -54,11 +54,14 @@ function whatCentury(year) {
 
         if (last === 1) {
             suffix = "st";
-        } else if (last === 2) {
+        }
+	else if (last === 2) {
             suffix = "nd";
-        } else if (last === 3) {
+        }
+	else if (last === 3) {
             suffix = "rd";
-        } else {
+        }
+	else {
             suffix = "th";
         }
     }
@@ -82,6 +85,32 @@ function findMissing(list) {
     return first;
 }
 
+
+
+
+function primeFactors(n){
+    let result="";
+    let d =2;
+  
+  while (n > 1){
+    let pow=0;
+    while (n % d == 0){
+      pow += 1;
+      n = n / d;
+    }
+    
+    if (pow > 0){
+      if (pow === 1){
+        result = result + "(" + d + ")";
+      }
+      else{
+        result = result + "(" + d + "**" + pow + ")";
+      }
+    }
+    d+=1;
+  }
+  return result;
+}
 
 
 
