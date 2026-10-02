@@ -43,6 +43,30 @@ function ipv4Parser(ip, mask) {
 
 
 
+function whatCentury(year) {
+    let centuryNumber = Math.ceil(Number(year) / 100);
+    let suffix = "";
+
+    if (centuryNumber === 11 || centuryNumber === 12 || centuryNumber === 13) {
+        suffix = "th";
+    } else {
+        let last = centuryNumber % 10;
+
+        if (last === 1) {
+            suffix = "st";
+        } else if (last === 2) {
+            suffix = "nd";
+        } else if (last === 3) {
+            suffix = "rd";
+        } else {
+            suffix = "th";
+        }
+    }
+
+    return centuryNumber + suffix;
+}
+
+
 
 
 
