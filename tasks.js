@@ -44,29 +44,30 @@ function ipv4Parser(ip, mask) {
 
 
 function whatCentury(year) {
-    let centuryNumber = Math.ceil(Number(year) / 100);
-    let suffix = "";
+    let century = Math.ceil(Number(year) / 100);
+    let end = "";
 
-    if (centuryNumber === 11 || centuryNumber === 12 || centuryNumber === 13) {
-        suffix = "th";
-    } else {
-        let last = centuryNumber % 10;
+    if (century === 11 || century === 12 || century === 13) {
+        end = "th";
+    } 
+	else {
+        let last = century % 10;
 
         if (last === 1) {
-            suffix = "st";
+            end = "st";
         }
 	else if (last === 2) {
-            suffix = "nd";
+            end = "nd";
         }
 	else if (last === 3) {
-            suffix = "rd";
+            end = "rd";
         }
 	else {
-            suffix = "th";
+            end = "th";
         }
     }
 
-    return centuryNumber + suffix;
+    return century + end;
 }
 
 
@@ -111,6 +112,30 @@ function primeFactors(n){
   }
   return result;
 }
+
+
+
+function toWeirdCase(string) {
+    let words = string.split(' ');
+    let result = [];
+
+    for (let i = 0; i < words.length; i++) {
+        let current = words[i];
+        let newWord = "";
+
+        for (let j = 0; j < current.length; j++) {
+            if (j % 2 === 0) {
+                newWord = newWord + current[j].toUpperCase();
+            } else {
+                newWord = newWord + current[j].toLowerCase();
+            }
+        }
+        result.push(newWord);
+    }
+
+    return result.join(' ');
+}
+
 
 
 
