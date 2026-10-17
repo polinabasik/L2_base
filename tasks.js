@@ -174,6 +174,24 @@ function expandedForm(num) {
 
 
 
+function solution(str){
+  
+   let pairsList = [];
+   for (let i = 0; i < str.length; i = i + 2) {
+   let substring = str.slice(i, i + 2);
+   if (substring.length === 1) {
+      substring = substring + '_';
+    }
+    
+    pairsList.push(substring);
+  }
+  
+  return pairsList;
+}
+
+
+
+
 
 
 
