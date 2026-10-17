@@ -140,6 +140,25 @@ function toWeirdCase(string) {
 
 
 
+function wave(str) {
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ') {
+            continue;
+        }
+        let before = str.slice(0, i);
+        let current = str[i].toUpperCase();
+        let after = str.slice(i + 1);
+        let waveWord = before + current + after;
+        result.push(waveWord);
+    }
+    return result;
+}
+
+
+
+
+
 
 
 
