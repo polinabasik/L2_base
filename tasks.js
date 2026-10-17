@@ -156,6 +156,21 @@ function wave(str) {
 }
 
 
+function expandedForm(num) {
+    let strNum = num.toString();
+    let parts = [];
+  
+    for (let i = 0; i < strNum.length; i++) {
+        if (strNum[i] !== '0') {
+            let zeroCount = strNum.length - 1 - i;
+            let digBlock = strNum[i] + "0".repeat(zeroCount);
+            parts.push(digBlock);
+        }
+    }
+    return parts.join(' + ');
+}
+
+
 
 
 
