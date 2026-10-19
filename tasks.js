@@ -218,6 +218,22 @@ let count = 0;
 
 
 
+function domainName(url){
+  
+  let cleanUrl = url.replace("http://", "");
+  cleanUrl = cleanUrl.replace("https://", "");
+  cleanUrl = cleanUrl.replace("www.", "");
+  
+  let ind = cleanUrl.indexOf('.');
+  let domain = cleanUrl.slice(0, ind);
+  
+  return domain;
+  
+}
+
+
+
+
 
 
 
