@@ -190,6 +190,32 @@ function solution(str){
 }
 
 
+function bingo(ticket, win) {
+
+let count = 0;
+    for (let i = 0; i < ticket.length; i++) {
+        let currentPair = ticket[i];
+        let currentString = currentPair[0];
+        let targetNumber = currentPair[1];
+
+        for (let j = 0; j < currentString.length; j++) {
+            if (currentString.charCodeAt(j) === targetNumber) {
+                count = count + 1;
+                break;
+            }
+        }
+    }
+
+    if (count >= win) {
+        return "Winner!";
+    } else {
+        return "Loser!";
+    }
+
+}
+
+
+
 
 
 
