@@ -234,6 +234,30 @@ function domainName(url){
 
 
 
+function longest(arr, n) {
+
+  let listInd = [];
+  for (let i = 0; i < arr.length; i++) {
+    listInd.push({
+      strVal: arr[i],
+      srcInd: i
+    });
+  }
+  
+   listInd.sort(function(a, b) {
+    if (b.strVal.length !== a.strVal.length) {
+      return b.strVal.length - a.strVal.length;
+    }
+    return a.srcInd - b.srcInd;
+  });
+
+  return listInd[n - 1].strVal;
+  
+}
+
+
+
+
 
 
 
