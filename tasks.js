@@ -258,6 +258,29 @@ function longest(arr, n) {
 
 
 
+function hexStringToRGB(hexString) {
+  
+  let rHex = hexString.slice(1, 3);
+  let gHex = hexString.slice(3, 5);
+  let bHex = hexString.slice(5, 7);
+  
+
+  let rValue = parseInt(rHex, 16);
+  let gValue = parseInt(gHex, 16);
+  let bValue = parseInt(bHex, 16);
+  
+
+  return {
+    r: rValue,
+    g: gValue,
+    b: bValue
+  };
+  
+}
+
+
+
+
 
 
 
